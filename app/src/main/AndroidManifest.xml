@@ -12,6 +12,12 @@
         android:theme="@style/Theme.MyAppSaludar"
         tools:targetApi="31">
         <activity
+            android:name=".VistaPromedio"
+            android:exported="false" />
+        <activity
+            android:name=".Promedio"
+            android:exported="false" />
+        <activity
             android:name=".Saludar"
             android:exported="false" />
         <activity

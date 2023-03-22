@@ -18,6 +18,14 @@ class Home : AppCompatActivity() {
 
         val boton2: Button = findViewById(R.id.btnIngresar1)
         boton2.setOnClickListener { homeRadio() }
+
+        val boton3: Button = findViewById(R.id.btnIngresar3)
+        boton3.setOnClickListener { handlePromedio() }
+    }
+
+    private fun handlePromedio() {
+        val intentPromedio: Intent = Intent(this, Promedio:: class.java)
+        startActivity(intentPromedio)
     }
 
     private fun homeRadio() {

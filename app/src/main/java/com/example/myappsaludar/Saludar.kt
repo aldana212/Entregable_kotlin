@@ -14,23 +14,26 @@ class Saludar : AppCompatActivity() {
         setContentView(R.layout.activity_saludar)
 
         val btnIngresa: Button= findViewById(R.id.btnIngresar)
-        btnIngresa.setOnClickListener { ingresarNombre() }
+        btnIngresa.setOnClickListener { onclick(1) }
 
         val btnRegresar: Button=findViewById(R.id.btnRegresar)
-        btnRegresar.setOnClickListener { Regresar() }
+        btnRegresar.setOnClickListener { onclick(2) }
     }
 
-    private fun Regresar() {
-        val intent :Intent= Intent(this, Home::class.java)
-        startActivity(intent)
+    private fun onclick(num: Int) {
+        when(num){
+            1->{
+                // val lblNombre:TextView=findViewById(R.id.)
+                val campoNombre: EditText = findViewById(R.id.txtNombre)
+                var Nombre = campoNombre.text
+                // lblNombre.text = Nombre
+                Toast.makeText(this, "Bienvenido $Nombre", Toast.LENGTH_LONG).show()
+            }
+            2->{
+                val intent :Intent= Intent(this, Home::class.java)
+                startActivity(intent)
+            }
+        }
     }
 
-    private fun ingresarNombre() {
-        // val lblNombre:TextView=findViewById(R.id.)
-        val campoNombre: EditText = findViewById(R.id.txtNombre)
-        var Nombre = campoNombre.text
-        // lblNombre.text = Nombre
-        Toast.makeText(this, "Bienvenido $Nombre", Toast.LENGTH_LONG).show()
-
-    }
 }
