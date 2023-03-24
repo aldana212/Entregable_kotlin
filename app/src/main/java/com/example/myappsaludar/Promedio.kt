@@ -30,10 +30,17 @@ class Promedio : AppCompatActivity() {
                 val campoNota1: EditText = findViewById(R.id.TextNumber)
                 val nota1:Double = campoNota1.text.toString().toDouble()
                 val campoNota2: EditText = findViewById(R.id.TextNumber2)
-                val nota2 = campoNota2.text.toString().toDouble()
+                val nota2:Double = campoNota2.text.toString().toDouble()
                 val campoNota3: EditText = findViewById(R.id.TextNumber3)
-                val nota3 = campoNota3.text.toString().toDouble()
+                val nota3:Double = campoNota3.text.toString().toDouble()
                 var Promedio = (nota1 + nota2 + nota3) / 3;
+                var Resultado= ""
+
+                if (Promedio >= 3.0){
+                    Resultado = "Aprobo"
+                }else{
+                    Resultado = "Desaprobo"
+                }
 
                 // cargamos el intent que se encarga de la comunicacion de las actividades
                 val intentver: Intent = Intent(this, VistaPromedio::class.java)
@@ -45,6 +52,7 @@ class Promedio : AppCompatActivity() {
                 miBundle.putString("nota2", "$nota2 ")
                 miBundle.putString("nota3", "$nota3")
                 miBundle.putString("promedio", "$Promedio")
+                miBundle.putString("Resultado", "$Resultado")
                 // le agragamos la informacion al Intent para que sea enviada
                 intentver.putExtras(miBundle)
                 // iniciamos la llamada de la nueva actividad

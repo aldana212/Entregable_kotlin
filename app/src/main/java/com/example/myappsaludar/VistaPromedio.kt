@@ -16,6 +16,8 @@ class VistaPromedio : AppCompatActivity() {
         val Nota2:TextView=findViewById(R.id.nota2)
         val Nota3:TextView=findViewById(R.id.nota3)
         val Promedio:TextView=findViewById(R.id.textPromedio)
+        val Result:TextView=findViewById(R.id.textResult)
+
 
         // recuperamos o capturamos la infomacion enviada
         val miBundle:Bundle ?= this.intent.extras
@@ -29,6 +31,7 @@ class VistaPromedio : AppCompatActivity() {
             Nota2.text = "${miBundle.getString("nota2")}"
             Nota3.text = "${miBundle.getString("nota3")}"
             Promedio.text = "${miBundle.getString("promedio")}"
+            Result.text = "${miBundle.getString("Resultado")}"
         }else{
 
         }
